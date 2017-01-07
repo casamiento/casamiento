@@ -1,0 +1,142 @@
+/*
+Name: StarWarsIntro.css
+URI: polarnotion.github.io/starwarsintro
+Author: Polar Notion
+Author URI: http://polarnotion.com/
+Description: A simple CSS library for creating a Star Wars Intro Crawl. May the Force be with you.
+Version: 1.0
+*/
+
+.star-wars-intro {
+  width: 100%;
+  height: 100vh;
+  font-family: "Droid Sans", arial, verdana, sans-serif;
+  font-weight: 700;
+  color: #EBD71C;
+  background-color: #000;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+.star-wars-intro p.intro-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  font-weight: 400;
+  color: #4ee;
+  opacity: 0;
+  z-index: 1;
+  text-align: left;
+  animation: intro 5.5s ease-out;
+}
+
+.star-wars-bg {
+  background: url("../img/bg.jpg");
+  background-size: cover;
+}
+
+.star-wars-intro .main-content {
+  margin: 0 auto;
+  position: absolute;
+  z-index: 3;
+  width: 98%;
+  max-width: 1400px;
+  height: 40em;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  font-size: 64px;
+  font-weight: bold;
+  text-align: justify;
+  overflow: hidden;
+  transform-origin: 50% 100%;
+  transform: perspective(400px) rotateX(25deg);
+}
+
+.star-wars-intro .main-content span {
+  font-size: 96px;
+}
+
+.star-wars-intro .main-content:after {
+  position: absolute;
+  content: ' ';
+  top: 0;
+  bottom: 60%;
+  background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.star-wars-intro .title-content {
+  position: absolute;
+  top: 100%;
+  animation: scroll 140s linear 4s forwards;
+  animation-delay: 12s;
+}
+
+.star-wars-intro .title-content > .content-header {
+  text-align: center;
+}
+
+/* Main Image Styles */
+
+.star-wars-intro .main-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: top left;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 18em;
+  line-height: 0.8em;
+  letter-spacing: -0.05em;
+  color: #000;
+  text-shadow: -2px -2px 0 #EBD71C, 2px -2px 0 #EBD71C, -2px 2px 0 #EBD71C, 2px 2px 0 #EBD71C;
+  opacity: 0;
+  z-index: 1;
+  animation: logo 8s ease-out 2.5s;
+  animation-delay: 6s;
+}
+
+@keyframes intro {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes stars {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes logo {
+  0% { transform: scale(1) translate(-50%, -50%); opacity: 1; }
+  50% { opacity: 1; }
+  100% { transform: scale(0.1) translate(-50%, -50%); opacity: 0; }
+}
+
+@keyframes scroll {
+  0% { top: 100%; }
+  100% { top: -170%; }
+}
+
+@media screen and (max-width: 1400px) {
+  .star-wars-intro p.intro-text {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .star-wars-intro .main-content {
+    font-size: 24px;
+  }
+  .star-wars-intro .main-content span {
+    font-size: 34px;
+  }
+  .star-wars-intro .title-content {
+    animation: scroll 100s linear 4s forwards;
+    animation-delay: 12s;
+  }
+}

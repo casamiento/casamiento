@@ -1,0 +1,327 @@
+@import "normalize"
+@import "starwarsintro"
+@import url('https://fonts.googleapis.com/css?family=Lato:700')
+
+html
+  overflow-y: scroll
+
+body
+  font-family: 'Lato', sans-serif
+  background-color: #000
+
+$red: #F60434
+$yellow: #EBD71C
+
+.pace
+  pointer-events: none
+  user-select: none
+  .pace-progress
+    background: $yellow
+    position: fixed
+    z-index: 2000
+    top: 0
+    right: 100%
+    width: 100%
+    height: 6px
+
+.pace-inactive
+  display: none
+
+#start
+  position: fixed
+  top: 0
+  right: 0
+  bottom:0
+  left: 0
+  background: #000
+  color: $yellow
+  z-index: 200
+
+  .v-center
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+  #load
+    font-size: 2em
+    animation: loading 2s infinite
+
+  #play
+    width: 0
+    height: 0
+    border-top: 40px solid transparent
+    border-left: 60px solid $yellow
+    border-bottom: 40px solid transparent
+    &:hover
+      cursor: pointer
+
+@keyframes loading
+  0% { opacity: 0 }
+  50% { opacity: 1 }
+  100% { opacity: 0 }
+
+.hide
+  display: none
+
+a
+  text-decoration: none
+  color: inherit
+
+.star-wars-intro
+  .r-btn
+    position: absolute
+    text-align: center
+    height: 50px
+    width: 100%
+    bottom: 16px
+    left: 0
+    right: 0
+    z-index: 100
+    opacity: 0
+    color: #EBD71C
+    animation: r-btn-ani 2s 46s infinite
+    .arrow
+      margin: 0 10px 0 0
+      font-size: 60px
+      transform: rotate(-90deg)
+
+@keyframes r-btn-ani
+  0% { transform: translate(0, -40px); opacity: 0 }
+  50% { opacity: 1 }
+  100% { transform: translate(0, 0); opacity: 0 }
+
+.btn
+  display: inline-block
+  margin: 2em auto 0 auto
+  padding: 0.5em 3em
+  border-radius: 13px
+  border: 2px solid
+  transition: all 0.4s
+  &:hover
+    cursor: pointer
+
+#photos
+  width: 100%
+  padding: 4% 0
+  text-align: center
+  img
+    width: 18.6%
+    height: auto
+    margin: 0.4%
+    border-radius: 3px
+
+#squares
+  overflow: hidden
+  margin: 0 auto
+  max-width: 1400px
+  padding: 0.5%
+
+  .red
+    background-color: $red
+    color: #fff
+    span
+      background-color: #fff
+      color: $red
+  .white
+    background-color: #fff
+    color: $red
+    span
+      background-color: $red
+      color: #fff
+    .btn
+      border-color: $red
+      background: #fff
+      &:hover
+        background-color: $red
+        color: #fff
+  .black
+    background-color: #000
+    color: $yellow
+    span
+      border: 2px solid $red
+      color: #fff
+    .btn
+      border-color: $yellow
+      background: #000
+      &:hover
+        background-color: $yellow
+        color: #000
+
+  .sq
+    position: relative
+    float: left
+    height: 0
+    overflow: hidden
+    margin: 0.2%
+    background:
+      position: center center
+      size: cover
+    &:last-child, &:nth-last-child(2)
+      margin-top: 5%
+
+    .hero
+      position: absolute
+      width: 50%
+      bottom: 10%
+      h1
+        font-size: 6em
+        color: #EBD71C
+        text-shadow: 2px 2px #000
+        margin: 0 0 0 10%
+
+    .text
+      position: absolute
+      width: 80%
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      z-index: 10
+      text-align: center
+
+      p
+        font-size: 1.4em
+        margin: 0.6em 0 1.4em 0.4em
+
+      span
+        font-size: 0.8em
+        padding: 0.4em 0.9em
+
+    .years
+      p
+        font-size: 3em
+
+    .date
+      p
+        span
+          font-size: 7em
+          padding: 0
+          background-color: inherit
+          color: #fff
+    .dir
+      h2
+        margin: 0.6em 0 0.4em 0
+        font-size: 3em
+      h3
+        font-size: 1em
+        margin: 0
+      p
+        margin: 0.6em 0 0.2em 0
+
+    .regalo
+      p
+        font-size: 1.2em
+        margin: 1.6em 0 2em 0
+      h3
+        display: inline-block
+        text-align: left
+        width: 60%
+        font-size: 0.9em
+        margin: 0.4em 0 0 0
+      h4
+        display: inline-block
+        text-align: right
+        padding-right: 1em
+        width: 30%
+        font-size: 0.6em
+        margin: 0
+        color: #444
+      .span-r
+        border: 2px solid $red
+        background-color: inherit
+        color: inherit
+      .text-pad
+        margin: 1.6em 0 0 0
+        a
+          &:hover
+            text-decoration: underline
+
+    .hoteles
+      p
+        font-size: 1.2em
+        margin: 1.4em 0 0 0
+      h3
+        font-size: 0.8em
+        margin: 0 0 0 0.7em
+        line-height: 1.2
+      h4
+        display: inline-block
+        padding: 0.4em 0.6em
+        margin: 1.4em 0 0.5em 0
+        border: 2px solid #fff
+        font-size: 0.7em
+      .text-pad
+        text-align: left
+        margin: 1em 0 0 0.8em
+        a
+          &:hover
+            text-decoration: underline
+
+    .info
+      text-align: left
+    .center
+      text-align: center
+
+    svg
+      position: absolute
+      z-index: 5
+
+  .row1
+    width: 33.333%
+    height: 420px
+  .row2
+    width: 49.6%
+    height: 420px
+  .row3
+    width: 99.6%
+    height: 620px
+  .row4
+    width: 99.6%
+    height: 360px
+
+  .img0
+    background-image: url("../img/img0.jpg")
+  .img3
+    background:
+      image: url("../img/img3.jpg")
+      position: left bottom
+  .img4
+    background-image: url("../img/img4.jpg")
+  .img5
+    background-image: url("../img/img5.jpg")
+  .img-info
+    background:
+      image: url("../img/info.jpg")
+      position: top
+
+@media (max-width: 800px)
+  #squares
+    .row2, .row3
+      width: 100%
+    .sq
+      &:last-child
+        margin-top: 0
+
+@media (max-width: 600px)
+  #photos
+    img
+      width: 46%
+      height: auto
+      margin: 0.4%
+  #squares
+    .row2, .row3
+      height: 420px
+    .sq
+      .hero
+        width: 100%
+        bottom: 4%
+        h1
+          font-size: 3em
+          margin: 0 0 0 6%
+      .years
+        p
+          font-size: 2em
+
+.clearfix
+  overflow: auto
+  zoom: 1
